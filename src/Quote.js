@@ -15,7 +15,7 @@ const Quote = () => {
       setErrorMessage("");
       setQuoteCopied(false);
       const quoteObject = await axios.get(
-        "https://ron-swanson-quotes.herokuapp.com/v2/quotes"
+        "https://api.quotable.io/random"
       );
       setQuote(quoteObject.data);
       setLoadingQuote(false);
@@ -29,11 +29,17 @@ const Quote = () => {
     fetchRandomQuote();
   }, []);
 
+  function copyQuote(){
+    navigator.clipboard.writeText(quote.content + "-" + quote.author)
+    quoteCopied(true)
+  }
+
   return (
     <div>
-      <div style={{ marginTop: 60 }}>{post}</div>
+      <div style={{ marginTop: 60 }}>{quote.content}</div>
       <div>
         <button
+        onClick= {fetchRandomQuote}
           style={{
             marginTop: 20,
             backgroundColor: "blue",
