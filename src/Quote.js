@@ -58,3 +58,8 @@ export default Quote;
 
 // need to have a empty object for the quote
 // need to have state
+
+
+
+// map 
+ 
