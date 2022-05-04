@@ -1,25 +1,28 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
-const QuoteFilter = () => {
-    const [post,setPost] = useState(null)
-useEffect(()=> {
-axios.get("https://ron-swanson-quotes.herokuapp.com/v2/quotes").then((response)=> {
-    setPost(response.data)
-    console.log(response.data)
-})
-},[])
+// const QuoteFilter = () => {
+//     const [post,setPost] = useState(null)
+// useEffect(()=> {
+// axios.get("https://ron-swanson-quotes.herokuapp.com/v2/quotes").then((response)=> {
+//     setPost(response.data)
+//     console.log(response.data)
+// })
+// },[])
 
-if(!post)return null
+// if(!post)return null
 
-    return( 
-    <div>
+//     return( 
+//     <div>
 
-    </div>
-    )
-}
+//         <input style={{width:200}} placeholder="Search Ron Swanson Quotes....." />
+  
+//         <h1>{post}</h1>
+//     </div>
+//     )
+// }
 
-export default QuoteFilter
+// export default QuoteFilter
 
 
 
